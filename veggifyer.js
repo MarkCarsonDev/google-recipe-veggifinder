@@ -18,8 +18,7 @@ $(document).ready(function() {
         });
     });
 
-    // Locate an existing parent container that encompasses the 'More recipes' section
-    const parentContainer = document.body; // This can be refined based on your specific needs
+    const parentContainer = document.body;
     
     observer.observe(parentContainer, { childList: true, subtree: true }); // Adding the 'subtree' option to observe descendants
 });
@@ -28,9 +27,7 @@ $(document).ready(function() {
 
 function getRecipes() {
     // Initialize an array to store ingredients for each recipe
-    let recipesWithIngredients = [
-        // populate this array using the previous code
-    ];
+    let recipesWithIngredients = [];
 
     // Find all divs with aria-level="3", assuming they indicate recipe names
     const recipeNameDivs = document.querySelectorAll('div[aria-level="3"]');
@@ -72,7 +69,7 @@ function getRecipes() {
             const eggs = ingredientsArray.some(ingredient => (ingredient.includes('eggs') || ingredient.includes('egg')) && !ingredient.includes('vegan'));
             const vegan = await isVegan.isVeganIngredientList(ingredientsArray) && !cheese && !eggs
 
-            // Construct the API URL
+            // Edit the recipe card background color
             if (vegan) {
                 recipeObject.recipe.parentElement.style.backgroundColor = "rgba(0, 255, 0, 0.1)";
             } else {
