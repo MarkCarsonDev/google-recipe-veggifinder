@@ -1,0 +1,13 @@
+{
+    "manifest_version": 3,
+    "name": "Veggifyer",
+    "version": "1.0.0",
+    "content_scripts": [
+      {
+        "js": ["bundle.js"],
+        "matches": ["https://www.google.com/*"]
+      }
+    ],
+    "permissions": ["activeTab"]
+  }
+  
